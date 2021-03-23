@@ -13,7 +13,7 @@ https://velog.io/@mincode_/mousemove-Event-target  <br>
 - resize (screen, inner, outer, clientWidth)
 - scroll (scollBy, scrollTo, scrollIntoView) <br>
 https://velog.io/@mincode_/scroll <br>
-`click` 이벤트와 `scroll API` 를 이용하여 간단한 예제와 토끼찾기 를 만들어보았다.
+`click` 이벤트와 `scroll API`, 그리고 그 안의 옵션들을 활용하여 간단한 예제와 토끼찾기 를 만들어보았다.
 
 
 
