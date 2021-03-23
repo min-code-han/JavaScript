@@ -1,1 +1,1 @@
-# JavaScript-to-React
+# JavaScript
