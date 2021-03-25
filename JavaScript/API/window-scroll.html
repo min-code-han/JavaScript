@@ -68,20 +68,20 @@
     <div></div>
     <script>
       // scroll
-      const goToSpecial = document.querySelector(".goToSpecial");
-      const down = document.querySelector(".down");
-      const up = document.querySelector(".up");
-      const special = document.querySelector(".special");
+      const goToSpecial = document.querySelector('.goToSpecial');
+      const down = document.querySelector('.down');
+      const up = document.querySelector('.up');
+      const special = document.querySelector('.special');
 
-      down.addEventListener("click", () => {
+      down.addEventListener('click', () => {
         window.scrollBy(0, 100);
         //window.scrollBy({ top: 100, left: 0, behavior: "smooth" });
       });
-      up.addEventListener("click", () => {
+      up.addEventListener('click', () => {
         window.scrollTo(0, 100);
       });
-      goToSpecial.addEventListener("click", () => {
-        special.scrollIntoView({ behavior: "smooth" });
+      goToSpecial.addEventListener('click', () => {
+        special.scrollIntoView({ behavior: 'smooth' });
       });
     </script>
   </body>
