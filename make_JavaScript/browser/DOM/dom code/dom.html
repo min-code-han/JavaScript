@@ -24,6 +24,8 @@
       img {
         z-index: 100;
         will-change: opacity;
+        width: 300px;
+        height: 300px;
       }
       h1,
       h3,
@@ -34,10 +36,23 @@
   </head>
   <body>
     <section>
-      <img src="img/avatar.png" alt="avatar" />
-      <h1 id="brand">Dream Coding</h1>
-      <h3>Don't forget to code your dream</h3>
+      <img src="img/me.jpeg" alt="avatar" />
+      <h1 id="brand">Mina Han</h1>
+      <h3>Frontend Developer</h3>
     </section>
     <span>Hello World!</span>
+    <script>
+      const section = document.querySelector('section');
+      const h2 = document.createElement('h2');
+      const p = document.createElement('p');
+
+      h2.setAttribute('class', 'title');
+      h2.textContent = 'This is a title';
+      p.textContent = 'make text right here !';
+      p.style = 'color: yellow';
+
+      section.appendChild(h2);
+      section.insertBefore(p, h2);
+    </script>
   </body>
 </html>
