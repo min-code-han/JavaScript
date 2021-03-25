@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        background-color: black;
+        text-align: center;
+      }
+      section {
+        width: 50%;
+        margin: 50px auto;
+        background-color: brown;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      img {
+        z-index: 100;
+        will-change: opacity;
+        width: 300px;
+        height: 300px;
+      }
+      h1,
+      h3,
+      span {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="img/me.jpeg" alt="avatar" />
+      <h1 id="brand">Mina Han</h1>
+      <h3>Frontend Developer</h3>
+    </section>
+    <span>Hello World!</span>
+    <script>
+      const section = document.querySelector('section');
+      const h2 = document.createElement('h2');
+      const p = document.createElement('p');
+
+      h2.setAttribute('class', 'title');
+      h2.textContent = 'This is a title';
+      p.textContent = 'make text right here !';
+      p.style = 'color: yellow';
+
+      section.appendChild(h2);
+      section.insertBefore(p, h2);
+    </script>
+  </body>
+</html>
