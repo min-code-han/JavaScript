@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  padding: 0;
+}
+body {
+  background-color: #dab485;
+  text-align: center;
+}
+button {
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.paper {
+  margin: auto;
+  width: 400px;
+
+  background-color: #fef7e5;
+  box-shadow: 17px 15px 15px 4px rgb(0 0 0 / 43%);
+  border-radius: 7px;
+}
+
+h1 {
+  line-height: 80px;
+}
+
+.task_list {
+  margin: auto;
+  width: 300px;
+  height: 300px;
+  overflow-y: auto;
+  list-style: none;
+  text-align: left;
+}
+
+.task {
+  position: relative;
+  padding: 11px 0;
+  font-size: 18px;
+}
+
+.write {
+  padding: 10px;
+  width: 90%;
+  height: 40px;
+  margin-bottom: 20px;
+  outline: none;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  font-size: 18px;
+}
+
+.fa-check-square {
+  margin-right: 10px;
+}
+.fa-check-square:hover {
+  transform: scale(1.1);
+}
+
+.fa-times {
+  position: absolute;
+  right: 5px;
+  font-size: 15px;
+  color: #ccc;
+}
+.fa-times:hover {
+  transform: scale(1.1);
+  color: red;
+}
