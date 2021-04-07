@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>evwnt-prevent</title>
+    <title>event-prevent</title>
     <style>
       div {
         margin-bottom: 10px;
@@ -51,7 +51,7 @@
       );
       // 스크롤링 처럼 브라우저가 빠르게 동작되어야 할때는 e.preventDefault(); 로 브라우저의 동작을 취소시킬수 없어요.
       //{ passive: false } 로 설정을 바꿔서 사용할 수는 있지만 웬만하면, 이렇게 default 값이 passive로 설정되어
-      // 있는 아이를 바꿔서 까지 사용하진 맙시다 :) !
+      // 있는 아이를 바꿔서 까지 사용하진 맙시다 :) !!
 
       const checkBox = document.querySelector('input');
       checkBox.addEventListener('click', (e) => {
