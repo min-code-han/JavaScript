@@ -6,7 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="game.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
     <script src="game.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <section class="game-wrap">
+      <header class="game-header">
+        <button class="start-button">
+          <i class="fas fa-play"></i>
+        </button>
+        <span class="timer">0:0</span>
+        <span class="score">9</span>
+      </header>
+      <section class="game-field"></section>
+    </section>
+    <section class="pop-up">
+      <button class="refresh-button">
+        <i class="fas fa-redo"></i>
+      </button>
+      <span class="pop-up-message">Retry</span>
+    </section>
+  </body>
 </html>
