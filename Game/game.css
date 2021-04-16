@@ -4,6 +4,7 @@ body {
 }
 button {
   background: none;
+  padding: 10px 20px;
 }
 
 .game-wrap {
@@ -25,6 +26,13 @@ button {
   width: 150px;
 }
 
+.game-header {
+  text-align: center;
+}
+.game-header span {
+  display: block;
+  font-size: 20px;
+}
 .pop-up {
   display: none;
 }
