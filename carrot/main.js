@@ -15,6 +15,12 @@ const popUp = document.querySelector('.pop-up');
 const popUpText = document.querySelector('.pop-up_message');
 const popUpRefresh = document.querySelector('.pop-up_refresh');
 
+const carrotSound = new Audio('./sound/carrot_pull.mp3');
+const alertSound = new Audio('./sound/alert.wav');
+const bgSound = new Audio('./sound/bg.mp3');
+const bugSound = new Audio('./sound/bug_pull.mp3');
+const winSound = new Audio('./sound/game_win.mp3');
+
 let started = false;
 let score = 0;
 let timer = undefined;
@@ -27,24 +33,45 @@ gameBtn.addEventListener('click', () => {
   } else {
     startGame();
   }
-  started = !started;
+});
+
+popUpRefresh.addEventListener('click', () => {
+  startGame();
+  hidePopUp();
 });
 
 function startGame() {
+  started = true;
   initGame();
   showStopButton();
   showTimerAndScore();
   startGameTimer();
+  playSound(bgSound);
 }
 
 function stopGame() {
+  started = false;
   stopGameTimer();
   hideGameButton();
   showPopUpWithText('REPLAY?');
+  playSound(alertSound);
+  stopSound(bgSound);
+}
+
+function finishGame(win) {
+  started = false;
+  hideGameButton();
+  if (win) {
+    playSound(winSound);
+  } else {
+    playSound(bugSound);
+  }
+  stopSound(bgSound);
+  showPopUpWithText(win ? 'YOU WON 🎉' : 'YOU LOST 💩');
 }
 
 function showStopButton() {
-  const icon = gameBtn.querySelector('.fa-play');
+  const icon = gameBtn.querySelector('.fas');
   icon.classList.add('fa-stop');
   icon.classList.remove('fa-play');
 }
@@ -86,7 +113,12 @@ function showPopUpWithText(text) {
   popUp.classList.remove('pop-up--hide');
 }
 
+function hidePopUp() {
+  popUp.classList.add('pop-up--hide');
+}
+
 function initGame() {
+  score = 0;
   field.innerHTML = '';
   gameScore.innerText = CARROT_COUNT;
   //벌레와 당근을 생성해서 field에 추가해주기
@@ -104,6 +136,7 @@ function onFieldClick(e) {
     //당근 !
     target.remove();
     score++;
+    playSound(carrotSound);
     updateScoreBord();
     if (score === CARROT_COUNT) {
       finishGame(true);
@@ -115,10 +148,13 @@ function onFieldClick(e) {
   }
 }
 
-function finishGame(win) {
-  started = false;
-  hideGameButton();
-  showPopUpWithText(win ? 'YOU WON 🎉' : 'YOU LOST 💩');
+function playSound(sound) {
+  sound.currentTime = 0;
+  sound.play();
+}
+
+function stopSound(sound) {
+  sound.pause();
 }
 
 function updateScoreBord() {
