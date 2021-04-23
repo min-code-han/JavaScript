@@ -66,6 +66,7 @@ function finishGame(win) {
   } else {
     playSound(bugSound);
   }
+  stopGameTimer();
   stopSound(bgSound);
   showPopUpWithText(win ? 'YOU WON 🎉' : 'YOU LOST 💩');
 }
@@ -143,7 +144,6 @@ function onFieldClick(e) {
     }
   } else if (target.matches('.bug')) {
     //벌레!
-    stopGameTimer();
     finishGame(false);
   }
 }
