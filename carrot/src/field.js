@@ -10,8 +10,9 @@ export default class Field {
     this.field = document.querySelector('.game_field');
     this.fieldRect = this.field.getBoundingClientRect(); //field의 위치값 받아올수 있음
     // this.field.addEventListener('click', this.onClick);  this 바인딩에 문제가 셍김.
-    this.field.addEventListener('click', (event) => this.onClick(event)); // 방법1: arrow function은 this가 그대로 유지됨 🎉
-    //this.field.addEventListener('click', this.onClick);
+    //this.field.addEventListener('click', (event) => this.onClick(event)); // 방법1: arrow function은 this가 그대로 유지됨 🎉
+    //this.onClick = this.onClick.bind(this);
+    this.field.addEventListener('click', this.onClick);
   }
 
   init() {
@@ -42,7 +43,7 @@ export default class Field {
     }
   }
 
-  onClick(event) {
+  onClick = (event) => {
     const target = event.target;
     if (target.matches('.carrot')) {
       target.remove();
@@ -51,7 +52,7 @@ export default class Field {
     } else if (target.matches('.bug')) {
       this.onItemClick && this.onItemClick('bug');
     }
-  }
+  };
 }
 
 function randomNumber(min, max) {
