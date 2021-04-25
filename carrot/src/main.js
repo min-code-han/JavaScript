@@ -1,13 +1,17 @@
 'use strict';
 
 import PopUp from './popup.js';
-import Game from './game.js';
+import Gamebuilder from './game.js';
 
 const gameFinishBanner = new PopUp();
 
-const game = new Game(3, 2, 2);
+const game = new Gamebuilder()
+  .withGameDuration(5)
+  .withCarrotCount(3)
+  .withBugCount(3)
+  .build();
+
 game.setGameStopListener((reason) => {
-  console.log(reason);
   let message;
   switch (reason) {
     case 'cancel':
